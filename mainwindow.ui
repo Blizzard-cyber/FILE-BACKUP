@@ -51,7 +51,7 @@
       <x>60</x>
       <y>200</y>
       <width>281</width>
-      <height>101</height>
+      <height>121</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -151,7 +151,7 @@ font: 10pt &quot;Candara&quot;;</string>
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>320</y>
+      <y>350</y>
       <width>281</width>
       <height>51</height>
      </rect>

@@ -21,9 +21,9 @@ set(PROJECT_SOURCES
         mainwindow.cpp      #主界面
         mainwindow.h
         mainwindow.ui
-        choose.cpp          #备份和恢复
-        choose.h
-        choose.ui
+        backup.cpp          #备份和恢复
+        backup.h
+        backup.ui
         register1.cpp         #注册
         register1.h
         register1.ui
@@ -36,8 +36,8 @@ set(PROJECT_SOURCES
         filepacker.h
         inoderecorder.cpp    #记录文件inode操作状态
         inoderecorder.h
-        up_down.cpp           #文件在数据库上传下载
-        up_down.h
+        updownload.cpp           #文件在数据库上传下载
+        updownload.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -57,7 +57,7 @@ else()
 # Define properties for Android with Qt 5 after find_package() calls as:
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
-        add_executable(filebackup
+        add_executable( filebackup
             ${PROJECT_SOURCES}
         )
     endif()

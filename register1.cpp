@@ -33,7 +33,7 @@ void register1::on_button_reg_clicked()
     if(name_reg=="")
         QMessageBox::warning(this,"","用户名不能为空");
     else{
-        QString name_sql = QString("select * from information where name='%1'" ).arg(name_reg);
+        QString name_sql = QString("select * from usrinfo where usrname='%1'" ).arg(name_reg);
         QSqlQuery query1;
         query1.exec(name_sql);
         if(query1.first())
@@ -44,7 +44,7 @@ void register1::on_button_reg_clicked()
         else if (password_reg != confirm_reg)
             QMessageBox::warning(this,"","两次输入的密码不一致");
         else{
-            QString command = QString("insert into information(name,password) values('%1','%2') ").arg(name_reg).arg(password_reg);
+            QString command = QString("insert into usrinfo(usrname,password) values('%1','%2') ").arg(name_reg).arg(password_reg);
             QSqlQuery query;
             if(query.exec(command))
             {

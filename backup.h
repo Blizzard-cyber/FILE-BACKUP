@@ -1,5 +1,5 @@
-#ifndef CHOOSE_H
-#define CHOOSE_H
+#ifndef BACKUP_H
+#define BACKUP_H
 
 #include <QWidget>
 #include <QString>
@@ -36,16 +36,16 @@ struct FIleUnitInfo //文件元信息结构体
 };
 
 namespace Ui {
-class choose;
+class backup;
 }
 
-class choose : public QWidget
+class backup : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit choose(QWidget *parent = nullptr);
-    ~choose();
+    explicit backup(QWidget *parent = nullptr);
+    ~backup();
 
 private slots:   
     void on_backup_clicked();
@@ -53,8 +53,8 @@ private slots:
     void getData(QString);
 
 private:
-    Ui::choose *ui;
+    Ui::backup *ui;
     QString name;
 };
 
-#endif // CHOOSE_H
+#endif // BACKUP_H

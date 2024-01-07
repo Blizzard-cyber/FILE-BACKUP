@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     db.setHostName("localhost");
     db.setUserName("root");
     db.setPassword("password");   //数据库密码（需要改）
-    db.setDatabaseName("filecopy");
+    db.setDatabaseName("filebackup");
     if(!db.open())
     {
         qDebug()<<"error";
@@ -47,9 +47,6 @@ int main(int argc, char *argv[])
 
     QApplication a(argc, argv);
     MainWindow w;
-
-
-
     w.show();
     return a.exec();  //进入事件循环
 }

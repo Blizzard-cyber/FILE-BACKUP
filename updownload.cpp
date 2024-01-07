@@ -1,6 +1,6 @@
 //文件的上传下载（与数据库交互）
 
-#include "up_down.h"
+#include "updownload.h"
 #include <cstring>
 #include "mainwindow.h"
 
@@ -23,7 +23,7 @@ char *getTime()
     return buf;
 }
 
-int upload(const std::string &path, const std::string &name)
+int upload(const std::string &path, const std::string &name ,const std::string &packagename)
 {
     int fp_r;
     int fp_w;
@@ -52,8 +52,10 @@ int upload(const std::string &path, const std::string &name)
     time_s = getTime();
     printf("%s\n",time_s);
 
-    sprintf(filepackage,"/home/linux-aka/recovery/%s",name.c_str());  
-    sprintf(filepath,"/home/linux-aka/recovery/%s/%s",name.c_str(),time_s);
+    std::string newString = packagename +" __ "+ time_s;  //文件名与时间戳拼接作为新文件名
+    
+    sprintf(filepackage,"/home/linux-aka/recovery/%s",name.c_str());                        //备份文件存储的文件夹（需更改）
+    sprintf(filepath,"/home/linux-aka/recovery/%s/%s",name.c_str(),newString.c_str());             //备份文件存储的目录（需更改）
     if(access(filepackage,X_OK) != 0)
     {
         if(mkdir(filepackage,0755) == -1)
@@ -74,19 +76,21 @@ int upload(const std::string &path, const std::string &name)
     if(count_w == -1)
         printf("errono=%d\n",errno);
 
-    delete[] time_s;
-    time_s = nullptr;
-
+    
     close(fp_r);
     close(fp_w);
 
-    QString S = QString("insert into history(Time,Path,size,oldpath,user) values ('%1','%2','%3','%4','%5')" ).arg(time_s).arg(filepath).arg(filesize).arg(path.c_str()).arg(name.c_str());
+    QString S = QString("insert into record(Time,TOPath,size,Frompath,usrname) values ('%1','%2','%3','%4','%5')" ).arg(time_s).arg(filepath).arg(filesize).arg(path.c_str()).arg(name.c_str());
     QSqlQuery query;
     if(query.exec(S) == true)
-        printf("good\n");
+        printf("Insert success!\n");
     else
-        printf("fail\n");
+        printf("Insert fail!\n");
+    
+    delete[] time_s;
+    time_s = nullptr;
     return 1;
+
 }
 
 int download(const std::string &path_user, const std::string &package_path)
@@ -98,12 +102,12 @@ int download(const std::string &path_user, const std::string &package_path)
     int count_r,count_w;
   //  char path[100];
 
-    QString S = QString("select *from history where path = '%1'").arg(path_user.c_str());
+    QString S = QString("select *from record where  TOpath = '%1'").arg(path_user.c_str());
     QSqlQuery query;
     if(query.exec(S) == true)
-        printf("good\n");
+        printf("Query sucess!\n");
     else
-        printf("fail\n");
+        printf("Query fail!\n");
     if(query.next())
     {
         filename1 = query.value(4).toString();

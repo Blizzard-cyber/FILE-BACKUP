@@ -1,18 +1,18 @@
       
 //实现备份与恢复功能的界面
 
-#include "choose.h"
+#include "backup.h"
 #include "filepacker.h"
-#include "up_down.h"
-#include "ui_choose.h"
+#include "updownload.h"
+#include "ui_backup.h"
 
 #include <QGraphicsDropShadowEffect>
 
 using namespace std;
 
-choose::choose(QWidget *parent) :
+backup::backup(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::choose)
+    ui(new Ui::backup)
 {
     ui->setupUi(this);
 
@@ -30,12 +30,12 @@ choose::choose(QWidget *parent) :
     
 }
 
-choose::~choose()
+backup::~backup()
 {
     delete ui;
 }
 
-void choose::on_backup_clicked() //点击文件备份
+void backup::on_backup_clicked() //点击文件备份
 {
     QString fileName;
 
@@ -48,9 +48,9 @@ void choose::on_backup_clicked() //点击文件备份
     QPushButton *dir = messagebox->addButton("目录",QMessageBox::AcceptRole);
     messagebox->exec();
     if(messagebox->clickedButton() == file)
-        fileName = QFileDialog::getOpenFileName(this,"选择文件","/home/linux-aka");  //选择文件目录（需更改）
+        fileName = QFileDialog::getOpenFileName(this,"选择文件","/home/linux-aka");  //选择文件根路径（需更改）
     else if(messagebox->clickedButton() == dir)
-        fileName = QFileDialog::getExistingDirectory(this,"选择目录","/home/linux-aka");   //选择目录（需更改）
+        fileName = QFileDialog::getExistingDirectory(this,"选择目录","/home/linux-aka");   //选择目录根路径（需更改）
 
     char t[] = "/tmp/BackupFile.XXXXXX";
     QString tempDirectory = mkdtemp(t);   //创建临时文件
@@ -66,6 +66,8 @@ void choose::on_backup_clicked() //点击文件备份
     int pos = fileName.lastIndexOf('/',fileName.size() - 2);
     QString relativePath = fileName.right(fileName.size() - pos - 1);
     QString rootDirectory = fileName.left(pos+1);
+
+
 
     //文件打包
     QMessageBox::information(NULL, "", "正在打包中...");
@@ -98,7 +100,7 @@ void choose::on_backup_clicked() //点击文件备份
 
     //文件上传
     QMessageBox::information(NULL, "", "文件上传中...");
-    if(upload((tempDirectory + COMPRESSOR_FILE_NAME).toStdString().c_str(),name.toStdString().c_str()) == 1)
+    if(upload((tempDirectory + COMPRESSOR_FILE_NAME).toStdString().c_str(),name.toStdString().c_str(),relativePath.toStdString().c_str()) == 1)
     {
         fileCompressor->DeleteFile();
         delete fileCompressor;
@@ -115,21 +117,21 @@ void choose::on_backup_clicked() //点击文件备份
     }
 }
 
-void choose::on_restore_clicked()
+void backup::on_restore_clicked()
 {
     char tr[] = "/tmp/BackupToolTmpFile.XXXXXX";
     QString tempDirectory = mkdtemp(tr);
     tempDirectory += "/";
 
     //选择目录界面，并将所得目录传递给变量rootDirectory
-    QString rootDirectory = QFileDialog::getExistingDirectory(this,"请选择目标文件夹","/home/linux-aka");  //选择目录（需更改）
+    QString rootDirectory = QFileDialog::getExistingDirectory(this,"请选择目标文件夹","/home/linux-aka");  //要将文件恢复到的文件夹（需更改根目录）
     if (!rootDirectory.isEmpty()) {
        qDebug() << "this is the file name " << rootDirectory;
     }
     if (rootDirectory.back() != '/')
             rootDirectory += '/';
 
-    QString packDirecroty_user = "/home/linux-aka/packup/" + name;
+    QString packDirecroty_user = "/home/linux-aka/recovery/" + name;                 //备份文件存储的目录（需更改）
     QString packDirectory = QFileDialog::getOpenFileName(this,"请选择文件",packDirecroty_user);
     if (!packDirectory.isEmpty()) {
        qDebug() << " file name:" << packDirectory;
@@ -194,7 +196,7 @@ void choose::on_restore_clicked()
         
 }
 
-void choose::getData(QString str1)
+void backup::getData(QString str1)
 {
     //获取从mainwindow界面登录成功的用户名
     name = str1;

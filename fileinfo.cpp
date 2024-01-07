@@ -475,7 +475,7 @@ StatusCode FileInfo::Restore()
     // 如果已经维护过，则建立硬链接即可
     if (savedPath != UnitInfo.rootPath || (UnitInfo.InodeCount > 1 && !FILE_TYPE_DIRECTORY))
     {
-    	printf("link,%d\n",UnitInfo.InodeCount);
+    	printf("link,%ld\n",UnitInfo.InodeCount);
         link(UnitInfo.rootPath.c_str(), (RootDirectory + UnitInfo.RelativePath).c_str());
     }
     // 如果没有维护过，则正常还原文件数据

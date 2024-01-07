@@ -1,5 +1,5 @@
-#ifndef UP_DOWN_H
-#define UP_DOWN_H
+#ifndef UPDOWNLOAD_H
+#define UPDOWNLOAD_H
 
 #include <string>
 #include <stdio.h>
@@ -25,11 +25,11 @@ struct historysend    //上传历史记录
     char size[17];
 };
 
-int upload(const std::string &path,const std::string &name);
+int upload(const std::string &path,const std::string &name,const std::string &packagename);
 int download(const std::string &path_user,const std::string &package_path);
 char *getFileName(char *path);
 char *getTime();
 size_t min(size_t a,size_t b);
 
-#endif // UP_DOWN_H
+#endif // UPDOWNLOAD_H
 

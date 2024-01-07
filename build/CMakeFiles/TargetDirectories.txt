@@ -1,0 +1,8 @@
+/home/linux-aka/filebackup/build/CMakeFiles/filebackup.dir
+/home/linux-aka/filebackup/build/CMakeFiles/edit_cache.dir
+/home/linux-aka/filebackup/build/CMakeFiles/rebuild_cache.dir
+/home/linux-aka/filebackup/build/CMakeFiles/list_install_components.dir
+/home/linux-aka/filebackup/build/CMakeFiles/install.dir
+/home/linux-aka/filebackup/build/CMakeFiles/install/local.dir
+/home/linux-aka/filebackup/build/CMakeFiles/install/strip.dir
+/home/linux-aka/filebackup/build/CMakeFiles/filebackup_autogen.dir

@@ -39,13 +39,13 @@ void MainWindow::on_login_clicked()
     else if (password_sql=="")
     QMessageBox::warning(this,"","密码不能为空");
     else{
-        QString S = QString("select * from information where name='%1' and password = '%2' " ).arg(name_sql,password_sql);
+        QString S = QString("select * from usrinfo where usrname='%1' and password = '%2' " ).arg(name_sql,password_sql);
         QSqlQuery query;
         query.exec(S);
         if(query.first())
         {
             QMessageBox::information(NULL, "登录通知", "登录成功！！");
-            choose *cho = new choose();
+            backup *cho = new backup();
             cho->show();
             connect(this,SIGNAL(sendData(QString)),cho,SLOT(getData(QString)));
             emit sendData(name_sql);
