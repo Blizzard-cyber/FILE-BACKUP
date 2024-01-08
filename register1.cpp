@@ -16,7 +16,6 @@ register1::register1(QWidget *parent) :
     QSize sz = ui->label_image->size();
     ui->label_image->setPixmap(pix->scaled(sz));
 
-    connect(ui->button_reg,SIGNAL(clicked()),this,SLOT(on_button_reg_clicked()));  //注册按钮
 }
 
 register1::~register1()
@@ -48,7 +47,7 @@ void register1::on_button_reg_clicked()
             QSqlQuery query;
             if(query.exec(command))
             {
-                 QMessageBox::critical(this,"注册通知","账户创建成功！！请返回登录");
+                 QMessageBox::information(this,"注册通知","账户创建成功！！请返回登录");
             }
             else
             {
