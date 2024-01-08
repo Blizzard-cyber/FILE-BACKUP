@@ -38,12 +38,12 @@ public:
         backup->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         label = new QLabel(backup);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(480, 40, 281, 51));
+        label->setGeometry(QRect(50, 50, 281, 51));
         label->setStyleSheet(QString::fromUtf8("font: 700 30pt \"Ubuntu\";"));
         label->setAlignment(Qt::AlignCenter);
         layoutWidget = new QWidget(backup);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(500, 220, 281, 121));
+        layoutWidget->setGeometry(QRect(70, 230, 281, 121));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -67,10 +67,10 @@ public:
 
         label_image = new QLabel(backup);
         label_image->setObjectName(QString::fromUtf8("label_image"));
-        label_image->setGeometry(QRect(-10, -10, 431, 471));
+        label_image->setGeometry(QRect(430, -20, 421, 481));
         label_2 = new QLabel(backup);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(460, 170, 161, 31));
+        label_2->setGeometry(QRect(50, 180, 161, 31));
         QFont font1;
         font1.setPointSize(12);
         font1.setBold(true);
@@ -78,7 +78,7 @@ public:
         label_2->setFont(font1);
         label_3 = new QLabel(backup);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(540, 100, 161, 31));
+        label_3->setGeometry(QRect(110, 110, 161, 31));
 
         retranslateUi(backup);
 

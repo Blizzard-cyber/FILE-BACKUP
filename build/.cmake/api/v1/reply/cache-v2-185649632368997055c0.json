@@ -282,7 +282,7 @@
 					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "FILEPATH",
+			"type" : "STRING",
 			"value" : "/usr/bin/gcc"
 		},
 		{
@@ -398,12 +398,16 @@
 			"properties" : 
 			[
 				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "Enable/Disable output of compile commands during generation."
 				}
 			],
 			"type" : "BOOL",
-			"value" : "TRUE"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_EXTRA_GENERATOR",
@@ -686,6 +690,18 @@
 			"value" : "1"
 		},
 		{
+			"name" : "CMAKE_PREFIX_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "No help, variable specified on the command line."
+				}
+			],
+			"type" : "STRING",
+			"value" : "/home/linux-aka/Qt5.12.12/5.12.12/gcc_64"
+		},
+		{
 			"name" : "CMAKE_PROJECT_DESCRIPTION",
 			"properties" : 
 			[
@@ -708,6 +724,18 @@
 			],
 			"type" : "STATIC",
 			"value" : ""
+		},
+		{
+			"name" : "CMAKE_PROJECT_INCLUDE_BEFORE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "No help, variable specified on the command line."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/home/linux-aka/Qt5.12.12/Tools/QtCreator/share/qtcreator/package-manager/auto-setup.cmake"
 		},
 		{
 			"name" : "CMAKE_PROJECT_NAME",
@@ -1062,6 +1090,18 @@
 			"value" : "FALSE"
 		},
 		{
+			"name" : "QT_CREATOR_SKIP_PACKAGE_MANAGER_SETUP",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Skip Qt Creator's package manager auto-setup"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "OFF"
+		},
+		{
 			"name" : "QT_DIR",
 			"properties" : 
 			[
@@ -1072,6 +1112,18 @@
 			],
 			"type" : "PATH",
 			"value" : "/home/linux-aka/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5"
+		},
+		{
+			"name" : "QT_QMAKE_EXECUTABLE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "No help, variable specified on the command line."
+				}
+			],
+			"type" : "STRING",
+			"value" : "/home/linux-aka/Qt5.12.12/5.12.12/gcc_64/bin/qmake"
 		},
 		{
 			"name" : "Qt5Core_DIR",

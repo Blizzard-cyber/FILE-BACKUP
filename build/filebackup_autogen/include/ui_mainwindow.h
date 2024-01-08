@@ -53,13 +53,13 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label_image = new QLabel(centralwidget);
         label_image->setObjectName(QString::fromUtf8("label_image"));
-        label_image->setGeometry(QRect(390, 0, 441, 521));
+        label_image->setGeometry(QRect(-10, 0, 441, 521));
         label_image->setFrameShape(QFrame::NoFrame);
         label_image->setFrameShadow(QFrame::Plain);
         label_image->setLineWidth(1);
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(60, 200, 281, 101));
+        layoutWidget->setGeometry(QRect(480, 170, 281, 121));
         verticalLayout_2 = new QVBoxLayout(layoutWidget);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -88,7 +88,7 @@ public:
 
         login_title = new QLabel(centralwidget);
         login_title->setObjectName(QString::fromUtf8("login_title"));
-        login_title->setGeometry(QRect(60, 130, 221, 41));
+        login_title->setGeometry(QRect(480, 100, 221, 41));
         QFont font;
         font.setFamily(QString::fromUtf8("Ubuntu"));
         font.setPointSize(27);
@@ -102,7 +102,7 @@ public:
         login_title->setMargin(5);
         layoutWidget1 = new QWidget(centralwidget);
         layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(60, 320, 281, 51));
+        layoutWidget1->setGeometry(QRect(480, 320, 281, 51));
         horizontalLayout = new QHBoxLayout(layoutWidget1);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);

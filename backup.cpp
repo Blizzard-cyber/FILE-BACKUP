@@ -35,7 +35,7 @@ backup::~backup()
     delete ui;
 }
 
-void backup::on_backup_clicked() //点击文件备份
+void backup::on_backup1_clicked() //点击文件备份
 {
     QString fileName;
 

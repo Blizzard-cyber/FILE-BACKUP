@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_backup_t {
     QByteArrayData data[5];
-    char stringdata0[53];
+    char stringdata0[54];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,14 +32,14 @@ struct qt_meta_stringdata_backup_t {
 static const qt_meta_stringdata_backup_t qt_meta_stringdata_backup = {
     {
 QT_MOC_LITERAL(0, 0, 6), // "backup"
-QT_MOC_LITERAL(1, 7, 17), // "on_backup_clicked"
-QT_MOC_LITERAL(2, 25, 0), // ""
-QT_MOC_LITERAL(3, 26, 18), // "on_restore_clicked"
-QT_MOC_LITERAL(4, 45, 7) // "getData"
+QT_MOC_LITERAL(1, 7, 18), // "on_backup1_clicked"
+QT_MOC_LITERAL(2, 26, 0), // ""
+QT_MOC_LITERAL(3, 27, 18), // "on_restore_clicked"
+QT_MOC_LITERAL(4, 46, 7) // "getData"
 
     },
-    "backup\0on_backup_clicked\0\0on_restore_clicked\0"
-    "getData"
+    "backup\0on_backup1_clicked\0\0"
+    "on_restore_clicked\0getData"
 };
 #undef QT_MOC_LITERAL
 
@@ -75,7 +75,7 @@ void backup::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         auto *_t = static_cast<backup *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_backup_clicked(); break;
+        case 0: _t->on_backup1_clicked(); break;
         case 1: _t->on_restore_clicked(); break;
         case 2: _t->getData((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;

@@ -48,7 +48,7 @@ public:
     ~backup();
 
 private slots:   
-    void on_backup_clicked();
+    void on_backup1_clicked();
     void on_restore_clicked();
     void getData(QString);
 

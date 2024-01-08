@@ -43,12 +43,12 @@ public:
         register1->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         confirm_label = new QLabel(register1);
         confirm_label->setObjectName(QString::fromUtf8("confirm_label"));
-        confirm_label->setGeometry(QRect(470, 280, 60, 22));
+        confirm_label->setGeometry(QRect(50, 260, 60, 22));
         confirm_label->setStyleSheet(QString::fromUtf8("font: 10pt \"Arial\";"));
         confirm_label->setAlignment(Qt::AlignCenter);
         confirm_reg = new QLineEdit(register1);
         confirm_reg->setObjectName(QString::fromUtf8("confirm_reg"));
-        confirm_reg->setGeometry(QRect(470, 310, 271, 41));
+        confirm_reg->setGeometry(QRect(50, 290, 271, 41));
         confirm_reg->setStyleSheet(QString::fromUtf8("background-color: rgb(247, 247, 247);\n"
 "border:1px groove gray;border-radius:\n"
 "7px;padding:2px 4px;\n"
@@ -56,20 +56,20 @@ public:
         confirm_reg->setEchoMode(QLineEdit::Password);
         label_image = new QLabel(register1);
         label_image->setObjectName(QString::fromUtf8("label_image"));
-        label_image->setGeometry(QRect(-10, 20, 461, 451));
+        label_image->setGeometry(QRect(360, 30, 461, 461));
         register_2 = new QLabel(register1);
         register_2->setObjectName(QString::fromUtf8("register_2"));
-        register_2->setGeometry(QRect(480, 60, 181, 41));
+        register_2->setGeometry(QRect(60, 40, 181, 41));
         register_2->setStyleSheet(QString::fromUtf8("font: 700 27pt \"Ubuntu\";"));
         register_2->setAlignment(Qt::AlignCenter);
         psw_label = new QLabel(register1);
         psw_label->setObjectName(QString::fromUtf8("psw_label"));
-        psw_label->setGeometry(QRect(470, 200, 30, 22));
+        psw_label->setGeometry(QRect(50, 180, 30, 22));
         psw_label->setStyleSheet(QString::fromUtf8("font: 10pt \"Arial\";"));
         psw_label->setAlignment(Qt::AlignCenter);
         password_reg = new QLineEdit(register1);
         password_reg->setObjectName(QString::fromUtf8("password_reg"));
-        password_reg->setGeometry(QRect(470, 230, 271, 41));
+        password_reg->setGeometry(QRect(50, 210, 271, 41));
         password_reg->setStyleSheet(QString::fromUtf8("background-color: rgb(247, 247, 247);\n"
 "border:1px groove gray;border-radius:\n"
 "7px;padding:2px 4px;\n"
@@ -77,7 +77,7 @@ public:
         password_reg->setEchoMode(QLineEdit::Password);
         layoutWidget = new QWidget(register1);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(470, 380, 271, 101));
+        layoutWidget->setGeometry(QRect(50, 360, 271, 101));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -98,13 +98,13 @@ public:
 
         name_label = new QLabel(register1);
         name_label->setObjectName(QString::fromUtf8("name_label"));
-        name_label->setGeometry(QRect(470, 120, 45, 23));
+        name_label->setGeometry(QRect(50, 100, 45, 23));
         name_label->setAcceptDrops(false);
         name_label->setStyleSheet(QString::fromUtf8("font: 10pt \"Arial\";"));
         name_label->setAlignment(Qt::AlignCenter);
         name_reg = new QLineEdit(register1);
         name_reg->setObjectName(QString::fromUtf8("name_reg"));
-        name_reg->setGeometry(QRect(470, 150, 271, 41));
+        name_reg->setGeometry(QRect(50, 130, 271, 41));
         name_reg->setStyleSheet(QString::fromUtf8("background-color: rgb(247, 247, 247);\n"
 "border:1px groove gray;border-radius:\n"
 "7px;padding:2px 4px;\n"
