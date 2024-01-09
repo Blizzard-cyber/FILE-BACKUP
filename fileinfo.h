@@ -36,7 +36,7 @@ struct FileUnitInfo
 class FileInfo
 {
 private:
-    FileUnitInfo UnitInfo;                                   // 文件元信息
+    FileUnitInfo UnitInfo;                                // 文件元信息
     std::fstream FileStream;                                 // 文件流
     std::string RootDirectory;                               // 根目录
     FilePacker *Packer;                                      // 文件打包器
